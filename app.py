@@ -1,8 +1,10 @@
-from flask import Flask, redirect, url_for, session,render_template
+from flask import Flask, redirect, url_for, session,render_template,request
+from pymongo import MongoClient
+client = MongoClient('localhost',27017)
 from flask_oauth import OAuth
+import json
 GOOGLE_CLIENT_ID = '55535937800-37l6lks9feaueodu64a2svi34ei0ujq7.apps.googleusercontent.com'
 GOOGLE_CLIENT_SECRET = '0OpJ3vyFesZ-jtC-TEPiLmbM'
-REDIRECT_URI = '/ouath2callback'
 SECRET_KEY = 'tejas'
 DEBUG = True
 import os
@@ -30,6 +32,12 @@ google = oauth.remote_app('google',
                            consumer_key=GOOGLE_CLIENT_ID,
                            consumer_secret=GOOGLE_CLIENT_SECRET)
 @app.route("/")
+def mainPage():
+    return render_template("hello.html")
+@app.route("/loginPage" ,methods=['GET','POST'])
+def loginPage():
+    return render_template("login.html")
+@app.route("/login/google",methods=['GET','POST'])
 def index():
     access_token = session.get('access_token')
     if access_token is None:
@@ -47,17 +55,24 @@ def index():
             session.pop('access_token',None)
             return redirect(url_for('login'))
         return res.read()
-    return res.read()
+    data = res.read().strip()
+    data = json.load(res)
+    print(data)
+    return "<h1>Logged In</h1>"
 @app.route("/login")
 def login():
     callback = url_for('authorized', _external = True)
     return google.authorize(callback=callback)
-@app.route(REDIRECT_URI)
+@app.route("/ouath2callback")
 @google.authorized_handler
 def authorized(resp):
     access_token = resp['access_token']
     session['access_token'] = access_token,''
     return redirect(url_for('index'))
-
+@app.route("/login/auth",methods=['POST'])
+def loginAuth():
+    print(request.form['user'])
+    return "<h1>Hello</h1>"
+    
 if __name__ == "__main__":
     app.run("localhost",port=5000)
