@@ -1,24 +1,26 @@
 from flask import Flask, redirect, url_for, session,render_template,request
+from flask_dance.contrib.google import make_google_blueprint, google
+from register import reg
+from config import GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,SECRET_KEY,DEBUG,jsondata,LOGGED_IN_USER_EMAIL
 from pymongo import MongoClient
-client = MongoClient('localhost',27017)
 from flask_oauth import OAuth
+from urllib.request import Request
+from urllib.request import urlopen
+from urllib.error import URLError
 import json
-GOOGLE_CLIENT_ID = '55535937800-37l6lks9feaueodu64a2svi34ei0ujq7.apps.googleusercontent.com'
-GOOGLE_CLIENT_SECRET = '0OpJ3vyFesZ-jtC-TEPiLmbM'
-SECRET_KEY = 'tejas'
-DEBUG = True
 import os
+
+client = MongoClient('localhost',27017)
+
 app = Flask(__name__)
 app.debug = DEBUG
 app.secret_key = SECRET_KEY
-from flask import Flask, redirect, url_for
-from flask_dance.contrib.google import make_google_blueprint, google
-app.secret_key = os.environ.get("FLASK_SECRET_KEY", "supersekrit")
-app.config["GOOGLE_OAUTH_CLIENT_ID"] = "55535937800-37l6lks9feaueodu64a2svi34ei0ujq7.apps.googleusercontent.com"
-app.config["GOOGLE_OAUTH_CLIENT_SECRET"] = "0OpJ3vyFesZ-jtC-TEPiLmbM"
+app.secret_key = SECRET_KEY
+app.config["GOOGLE_OAUTH_CLIENT_ID"] = GOOGLE_CLIENT_ID
+app.config["GOOGLE_OAUTH_CLIENT_SECRET"] = GOOGLE_CLIENT_SECRET
 google_bp = make_google_blueprint(scope=["email"])
 app.register_blueprint(google_bp, url_prefix="/login")
-
+app.register_blueprint(reg)
 oauth = OAuth()
 
 google = oauth.remote_app('google',
@@ -43,9 +45,6 @@ def index():
     if access_token is None:
         return redirect(url_for('login'))
     access_token = access_token[0]
-    from urllib.request import Request
-    from urllib.request import urlopen
-    from urllib.error import URLError
     headers = {'Authorization': 'OAuth '+access_token}
     req = Request('https://www.googleapis.com/oauth2/v1/userinfo',None, headers)
     try:
@@ -55,10 +54,12 @@ def index():
             session.pop('access_token',None)
             return redirect(url_for('login'))
         return res.read()
-    data = res.read().strip()
-    data = json.load(res)
-    print(data)
-    return "<h1>Logged In</h1>"
+    data = res.read()
+    data = data.decode('utf8')
+    jsondata = json.loads(data)
+    LOGGED_IN_USER_EMAIL = jsondata["email"]
+    #TODO: ADD Code to Check if user in DB, if yes then redirect to Main Page, else redirect to register page
+    return redirect(url_for("mainPage"))
 @app.route("/login")
 def login():
     callback = url_for('authorized', _external = True)
@@ -69,9 +70,20 @@ def authorized(resp):
     access_token = resp['access_token']
     session['access_token'] = access_token,''
     return redirect(url_for('index'))
+
 @app.route("/login/auth",methods=['POST'])
 def loginAuth():
-    print(request.form['user'])
+    user = request.form['user']
+    password = request.form['password']
+    db = client.logindb
+    res = db.loginAuth.find_one({""+user+"":""+password+""})
+    print(res)
+    if res == None:
+        return "<h1>Invalid Password</h1>"
+    elif res[user] == password:
+        return redirect(url_for("mainPage"))
+    else:
+        return "<h1>Invalid Password</h1>"
     return "<h1>Hello</h1>"
     
 if __name__ == "__main__":
