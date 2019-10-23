@@ -4,8 +4,7 @@ from register import reg
 from config import GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,SECRET_KEY,DEBUG,jsondata,LOGGED_IN_USER_EMAIL
 from pymongo import MongoClient
 from flask_oauth import OAuth
-from urllib.request import Request
-from urllib.request import urlopen
+from urllib.request import Request,urlopen
 from urllib.error import URLError
 import json
 import os
@@ -33,6 +32,10 @@ google = oauth.remote_app('google',
                            access_token_params={'grant_type': 'authorization_code'},
                            consumer_key=GOOGLE_CLIENT_ID,
                            consumer_secret=GOOGLE_CLIENT_SECRET)
+@app.errorhandler(405)
+def error405(code):
+    print(code)
+    return "<h1>Ooops!!, How did you get here??"
 @app.route("/")
 def mainPage():
     return render_template("hello.html")
@@ -87,4 +90,4 @@ def loginAuth():
     return "<h1>Hello</h1>"
     
 if __name__ == "__main__":
-    app.run("localhost",port=5000)
+    app.run("localhost",port=5000,ssl_context=('cert.pem','key.pem'),threaded=True)
