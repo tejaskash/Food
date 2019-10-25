@@ -4,27 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}"> -->
+    <style>
+        /*****Designer Amresh kanna************/
+/*******Appcookiedeveopler***********/
+body{
+margin:10px -10%;
+padding:0;
+font-family:raleway,arial,helvetica,sans-serif;
+background:linear-gradient(45deg,darkorchid,crimson);
+}
+.wrapper{
+  width:400px;
+  height:30%;
+  margin: 10% 32% 0 32%;
+  background:rgba(20,30,40,0.6);
+  padding:50px 0 0 0 ;
+  border:25px double ivory;
+  border-top-color:transparent;
+  animation:3s blink ease-in-out infinite;
+  border-bottom-color:transparent;
+  box-sizing:padding-box;
+  position:absolute;
+  border-radius:28%;
+  box-shadow:0px 60px 200px -40px #000;
+}
+input[type="text"],input[type="password"]{
+margin:0px 50px;
+padding:5px 15px;
+height:30px;
+width:250px;
+display:block;
+color:#fff;
+font-size:1.2em;
+position:relative;
+box-sizing:padding-box;
+background:transparent;
+border:none;
+border-bottom:5px double #fff;
+
+}
+input[type="text"],input[type="password"]:focus{
+outline:none;
+}
+input[type="submit"]{
+margin:0 110px;
+width:150px;
+height:35px;
+padding:5px;
+background:springgreen;
+border:1px solid #000;
+border-radius:10px;
+box-shadow:0px 10px 20px -8px springgreen;
+}
+/*************Shake animation**********/
+.wrapper:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+/*****************************/
+@keyframes blink {
+20% ,30% {
+        border:25px double ivory;
+         border-top-color:transparent;
+		  border-bottom-color:transparent;
+		}
+50%,70%{
+       border:25px double springgreen;
+         border-top-color:transparent;
+		  border-bottom-color:transparent;
+
+}
+80%,90%,100%{
+          border:25px double #000;
+         border-top-color:transparent;
+		  border-bottom-color:transparent;
+
+}		
+
+}
+p {
+  text-align:center;
+  font-size:1.2em;
+  color:#fff;
+  font-weight:bold;
+}
+    </style>
     <title>Login</title>
 </head>
 <body>
     <center>
+    <div class="wrapper">
     <div id="loginbox">
         <div id="content">
         <form id="loginform" method="POST" action="/login/auth">
-            <label id="lb1">Username</label>
-            <input type="text" name="user">
-            <label id="lb2">Password</label>
-            <input type="password" name="password">
+            <label id="lb1"></label>
+            <input type="text" name="user" placeholder="username" required>
+            <label id="lb2"></label>
+            <input type="password" name="password" placeholder="password" required>
+        </br>
+    </br>
             <input type="submit" value="Login" id="loginBut">
         </form>
-    <form action="/login/google" method="POST">
-        <input type="submit" value="Sign In with Google" id="google">
-    </form>
     <form action="/register" method="POST">
         <input type="submit" value="Register" id="google">
     </form>
     </div>
+</div>
 </center>
 </body>
 </html>
