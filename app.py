@@ -1,11 +1,7 @@
 from flask import Flask, redirect, url_for, session,render_template,request
-from flask_dance.contrib.google import make_google_blueprint, google
 from register import reg
-from config import GOOGLE_CLIENT_ID,GOOGLE_CLIENT_SECRET,SECRET_KEY,DEBUG,jsondata,LOGGED_IN_USER_EMAIL
+from config import LOGGED_IN_USER_EMAIL
 from pymongo import MongoClient
-from flask_oauth import OAuth
-from urllib.request import Request,urlopen
-from urllib.error import URLError
 import json
 import os
 
