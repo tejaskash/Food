@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5db1dd0d5d20ff4704ad15a3"},"IID":{"$numberInt":"4001"},"RID":"2001","Item Name":"Lasagna","Catergory":["Italian","Main Course","Pasta"],"Price":"250","Size":"One Serving","R_Obj_Id":{"$oid":"5db1d6695d20ff4704ad15a0"}}
+{"_id":{"$oid":"5db1de934b28204704ad0355"},"IID":{"$numberInt":"4002"},"RID":"2001","Item Name":"Masala Papad","Catergory":["Indian","Starters","Chaat"],"Price":"35","Size":"One Serving","R_Obj_Id":{"$oid":"5db1d6695d20ff4704ad15a0"}}
