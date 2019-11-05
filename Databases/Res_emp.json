@@ -1,0 +1,1 @@
+{"_id":{"$oid":"5db1dc105d20ff4704ad15a2"},"EID":{"$numberInt":"3001"},"E-Mail":"zoe@gmail.com","Password":"zoe3001","First Name":"Zoe","Last Name":"Sands","Designation":"Owner","RID":"2001","R_Obj_Id":{"$oid":"5db1d6695d20ff4704ad15a0"}}
