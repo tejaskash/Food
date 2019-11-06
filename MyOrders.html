@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=chrome" />
+  <title>Profile</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bg {
+      /* The image used */
+      background-image: url("./profile.png");
+
+      /* Full height */
+      height: 100%;
+
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="container">
+    <h3>Welcome</h3>
+    <h4>Details</h4>
+    <p color:"Black">
+      Item Name:{{ itemName }}<br />
+      Category: {{ category }}<br />
+      Price : {{ price }}<br />
+    </p>
+    <br />
+    <a href="/profile/edit/{{ email }}">Edit Profile</a>
+    <a href="/profile/orders/{{ email }}">View Previous Orders</a>
+
+<h1>MY Orders</h1><br>
+<br>
+    <table>
+        {%for i in data%}
+        <tr>
+          <td>
+              {{i["Restaurant"]}}
+          </td>  
+          <td>
+              {{i["timestamp"]}}
+          </td>
+        </tr>
+        {%for j in i["OrderItems"]%}
+        <tr>
+            <td>
+                {{j}}
+            </td>
+            <td>
+                {{i["OrderItems"][j]}}
+            </td>
+        </tr>
+        <tr></tr>
+        {%endfor%}
+
+        {%endfor%}
+    </table>
+
+  </div>
+</body>
+
+</html>
