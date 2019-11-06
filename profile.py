@@ -45,5 +45,7 @@ def updateProfile(email):
 def previousOrders(email):
     db = client.ordersdb
     res = db.orders.find({"email":email})
-    print(res)
-    return "<h1>Done</h1>"
+    s=""
+    for r in res:
+        s = s+str(r)
+    return "<h4>"+s+"</h4>"
