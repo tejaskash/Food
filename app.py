@@ -30,9 +30,8 @@ def loginAuth():
     db = client.logindb
     res=db.loginAuth.find_one({"user":user,"passw":password})
     print(res)
-    if res == None:
-        return "<h1>Invalid Password</h1>"
-    elif res["passw"] == password:
+    if res["passw"] == password:
+        db=client.logindb
         db.loggedin.insert_one({"user":user})
         return render_template("dashboard.html")
     else:

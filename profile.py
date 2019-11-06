@@ -41,3 +41,9 @@ def updateProfile(email):
     db=client.addressdb
     db.loginAuth.update_one({"user":email},{"$set":{"passw":request.form['password']}})
     return "<h1>Success</h1>"
+@prof.route("/profile/orders/<email>",methods=['GET','POST'])
+def previousOrders(email):
+    db = client.ordersdb
+    res = db.orders.find({"email":email})
+    print(res)
+    return "<h1>Done</h1>"
