@@ -7,7 +7,7 @@
     <title>Dashboard</title>
     <style>
         .topnav{
-            background-color:red;
+            background-color:#CB202D;
             overflow:hidden;
         }
         .topnav a{
@@ -27,18 +27,33 @@
             color: white;
         }
         body{
-            background-color: midnightblue;
+            background-color:white;
+        }
+        .pockets{
+            margin-top:25px;
+            background-color:#CB202D;
+            height: 350px;
+            opacity: 0.8;
+            filter: alpha(opacity=30);
+            background-image: url("../static/images/bg.jpg");
         }
     </style>
 </head>
 <body>
+    <script type="text/javascript">
+        function change(this)
+        {
+            this.class="active";
+        }   
+    </script>
     <div class="topnav">
-            <a href="/register">Register</a>
-            <a href="#MyOrders">Orders</a>
-            <a href="#Profile">Profie</a>
-            <a href="#Profile">Profie</a>
-            <a href="#Logout">Logout</a>
-            <a class="active" href="#home">Home</a>
+            <a  href="#Logout">Profile</a>
+            <a  href="/register">Login</a>
+            <a  href="#profile">Search</a>
+            <a  href="#home">Home</a>
+    </div>
+    <div class="pockets">
+        <h3 style="text-align:center;color: white;">Pockets</h3>
     </div>
 </body>
 </html>

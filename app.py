@@ -36,4 +36,4 @@ def loginAuth():
     return "<h1>Hello</h1>"
     
 if __name__ == "__main__":
-    app.run("localhost",port=5000,threaded=True)
+    app.run("localhost",port=5000,threaded=True,debug=True)
