@@ -1,59 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Dashboard</title>
     <style>
-        .topnav{
-            background-color:#CB202D;
-            overflow:hidden;
-        }
-        .topnav a{
-            float: right;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
-        .topnav a:hover{
-            background-color: #ddd;
-            color: black;
-        }
-        .topnav a.active{
-            background-color: #4CAF50;
-            color: white;
-        }
-        body{
-            background-color:white;
-        }
-        .pockets{
-            margin-top:25px;
-            background-color:#CB202D;
-            height: 350px;
-            opacity: 0.8;
-            filter: alpha(opacity=30);
-            background-image: url("../static/images/bg.jpg");
-        }
+      .topnav {
+        background-color: #cb202d;
+        overflow: hidden;
+      }
+      .topnav a {
+        float: right;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .topnav a.active {
+        background-color: #4caf50;
+        color: white;
+      }
+      body {
+        background-color: white;
+      }
+      .pockets {
+        margin-top: 25px;
+        background-color: #cb202d;
+        height: 350px;
+        opacity: 0.8;
+        filter: alpha(opacity=30);
+      }
+      .logout{
+          float: right;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <script type="text/javascript">
-        function change(this)
-        {
-            this.class="active";
-        }   
+      function change(this)
+      {
+          this.class="active";
+      }
     </script>
-    <div class="topnav">
-            <a  href="/logout">Logout</a>
-            <a  href="/profile">Profile</a>
-            <a  href="/search">Search</a>
-            <a  href="#home">Home</a>
+    <div class="w3-top">
+      <div class="w3-bar w3-black w3-card">
+        <a
+          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a
+          href="/search"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >SEARCH</a
+        >
+        <a
+          href="/profile"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >PROFILE</a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        
+        <a
+          href="/logout"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="#"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          ></a
+        >
+        <a
+          href="/logout"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+          >LOG-OUT</a
+        >
+        </div>
+      </div>
     </div>
-    <div class="pockets">
-        <h3 style="text-align:center;color: white;">Pockets</h3>
-    </div>
-</body>
+    <div class="mySlides w3-display-container w3-center">
+            <img src="../static/images/1.jpg" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+              <h3>Fast Food</h3>
+              <p><b>Our Variety is definitely finger lickin' good</b></p>   
+            </div>
+          </div>
+          <div class="mySlides w3-display-container w3-center">
+            <img src="../static/images/2.jpg" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+              <h3>Dessert</h3>
+              <p><b>When you're craving for something sweet</b></p>    
+            </div>
+          </div>
+          <div class="mySlides w3-display-container w3-center">
+            <img src="../static/images/3.jpg" style="width:100%">
+            <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+              <h3>Multi-Cuisine Restaurants</h3>
+              <p><b>Restaurants which serve all your mood-cravings</b></p>    
+            </div>
+          </div>
+  </body>
 </html>
