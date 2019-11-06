@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome" />
     <title>Edit Profile</title>
-</head>
-<body>  
-    <form method="POST" action="/update/{{email}}">
-        Unit Number: <input type="text" name="unum" value="{{unum}}">
-        Building Name: <input type="text" name="bname" value="{{bname}}">
-        Address Line 1: <input type="text" name="addr1" value="{{addr1}}">
-        Address Line 2:<input type="text" name="addr2" value="{{addr2}}">
-        City: <input type="text" name="city" value="{{city}}">
-        Pincode: <input type="text" name="pincode" value="{{pincode}}">
-        Password: <input type="password" name="password" value="{{password}}">
-        <input type="submit">
-    </form>
-</body>
+    <style>
+      .bg {
+        background-image: url("../static/images/edit_profile.png");
+        margin: 0;
+        /* Full height */
+        height: 100%;
+        /*background-color: rebeccapurple;*/
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <!--
+      <form method="POST" action="/update/{{ email }}">
+        Unit Number:<br />
+        <input type="text" name="unum" value="{{ unum }}" /><br />
+        <input type="text" name="bname" value="{{ bname }}" /> Address Line
+        1:<br />
+        <input type="text" name="addr1" value="{{ addr1 }}" /> Address Line<br />
+        2:<input type="text" name="addr2" value="{{ addr2 }}" /> City:<br />
+        <input type="text" name="city" value="{{ city }}" /> Pincode:<br />
+        <input type="text" name="pincode" value="{{ pincode }}" />
+        Password:<br />
+        <input type="password" name="password" value="{{ password }}" /><br />
+        <input type="submit" />
+      </form>
+      -->
+    </div>
+  </body>
 </html>
