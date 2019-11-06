@@ -1,137 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}"> -->
-    <style>
-        /*****Designer Amresh kanna************/
-/*******Appcookiedeveopler***********/
-body{
-margin:10px -10%;
-padding:0;
-font-family:raleway,arial,helvetica,sans-serif;
-background:linear-gradient(45deg,darkorchid,crimson);
-}
-.wrapper{
-  width:400px;
-  height:30%;
-  margin: 10% 32% 0 32%;
-  background:rgba(20,30,40,0.6);
-  padding:50px 0 0 0 ;
-  border:25px double ivory;
-  border-top-color:transparent;
-  animation:3s blink ease-in-out infinite;
-  border-bottom-color:transparent;
-  box-sizing:padding-box;
-  position:absolute;
-  border-radius:28%;
-  box-shadow:0px 60px 200px -40px #000;
-}
-input[type="text"],input[type="password"]{
-margin:0px 50px;
-padding:5px 15px;
-height:30px;
-width:250px;
-display:block;
-color:#fff;
-font-size:1.2em;
-position:relative;
-box-sizing:padding-box;
-background:transparent;
-border:none;
-border-bottom:5px double #fff;
-
-}
-input[type="text"],input[type="password"]:focus{
-outline:none;
-}
-input[type="submit"]{
-margin:0 110px;
-width:150px;
-height:35px;
-padding:5px;
-background:springgreen;
-border:1px solid #000;
-border-radius:10px;
-box-shadow:0px 10px 20px -8px springgreen;
-}
-/*************Shake animation**********/
-.wrapper:hover {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: red;
 }
 
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
+* {
+  box-sizing: border-box;
 }
-/*****************************/
-@keyframes blink {
-20% ,30% {
-        border:25px double ivory;
-         border-top-color:transparent;
-		  border-bottom-color:transparent;
-		}
-50%,70%{
-       border:25px double springgreen;
-         border-top-color:transparent;
-		  border-bottom-color:transparent;
 
+#fname,#lname{
+  width: 300px;
 }
-80%,90%,100%{
-          border:25px double #000;
-         border-top-color:transparent;
-		  border-bottom-color:transparent;
 
-}		
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  margin:auto;
+  margin-top: 40px;;
+}
 
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
-p {
-  text-align:center;
-  font-size:1.2em;
-  color:#fff;
-  font-weight:bold;
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
-    </style>
-    <title>Login</title>
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+#ln{
+  margin-left: 280px;
+}
+#lname{
+  margin-left:55px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color:darkred;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
 </head>
 <body>
-    <center>
-    <div class="wrapper">
-    <div id="loginbox">
-        <div id="content">
-        <form id="loginform" method="POST" action="/login/auth">
-            <label id="lb1"></label>
-            <input type="text" name="user" placeholder="username" required>
-            <label id="lb2"></label>
-            <input type="password" name="password" placeholder="password" required>
-        </br>
-    </br>
-            <input type="submit" value="Login" id="loginBut">
-        </form>
-    <form action="/register" method="POST">
-        <input type="submit" value="Register" id="google">
-    </form>
-    </div>
+<div class="container">
+<form action="/login/auth" method="POST">
+  
+    <h1 style="text-align: center;">Login</h1>
+    <hr>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <hr>
+    <input type="submit" class="registerbtn" value="Login">
+ 
+</form>
+<form action="/register" method="GET">
+  <input type="submit" class="registerbtn" value="Register">
+</form>
 </div>
-</center>
+
+
 </body>
 </html>
