@@ -10,7 +10,12 @@
     <form action="/pay" method="POST">
         <input type="hidden" value="{{email}}" name="email">
         <input type="hidden" value="{{order}}" name="ord">
-        <input type="card"
+        <input type="hidden" value="{{name}}" name="name">
+        Card Number: <input type="text" name="ccnum"><br>
+        Name On Card: <input type="text" name="ccname"><br>
+        CVV: <input type="password" name="cccvv"><br>
+        Expiry: <input type="month" name="exp"><br>
+        <input type="submit" value="Make Payment">
     </form>
 </body>
 </html>

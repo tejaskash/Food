@@ -26,5 +26,5 @@ def placeOrder(name):
     db = client.logindb
     email = db.loggedin.find_one()["user"]
     db = client.orderdb
-    db.orders.insert_one({"email":email,"OrderItems":order,"timestamp":datetime.now()})
-    return render_template("payment.html",order=order,email=email)
+    db.orders.insert_one({"email":email,"rest":name,"OrderItems":order,"timestamp":datetime.now()})
+    return render_template("payment.html",order=order,email=email,name=name)
