@@ -1,110 +1,153 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: red;
-}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
 
-* {
-  box-sizing: border-box;
-}
+      * {
+        box-sizing: border-box;
+      }
 
-#fname,#lname{
-  width: 300px;
-}
+      #fname,
+      #lname {
+        width: 300px;
+      }
 
-/* Add padding to containers */
-.container {
-  padding: 16px;
-  background-color: white;
-  width: 700px;
-  height: 800px;
-  margin:auto;
-}
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+        background-color: white;
+        width: 700px;
+        height: 800px;
+        margin: auto;
+      }
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
+      /* Full-width input fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
 
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-#ln{
-  margin-left: 280px;
-}
-#lname{
-  margin-left:55px;
-}
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      #ln {
+        margin-left: 280px;
+      }
+      #lname {
+        margin-left: 55px;
+      }
 
-/* Set a style for the submit button */
-.registerbtn {
-  background-color:darkred;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
+      /* Set a style for the submit button */
+      .registerbtn {
+        background-color: darkred;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
 
-.registerbtn:hover {
-  opacity: 1;
-}
+      .registerbtn:hover {
+        opacity: 1;
+      }
 
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
+      /* Add a blue text color to links */
+      a {
+        color: dodgerblue;
+      }
 
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
-</style>
-</head>
-<body>
+      /* Set a grey background color and center the text of the "sign in" section */
+      .signin {
+        background-color: #f1f1f1;
+        text-align: center;
+      }
+      .bg {
+        /* The image used */
+        background-image: url("./login.jpg");
 
-<form action="/address" method="POST">
-  <div class="container">
-    <h1>Address</h1>
-    <p>Tasty food is just a couple of clicks away</p>
-    <hr>
-    <label for="fname"><b>Unit Number</b></label><label id="ln" for="lname"><b>Building Name</b></label><br>
-    <input type="text" id="fname" placeholder="Unit Number" name="fname" required>
-    <input type="text" id="lname" placeholder="Building Name" name="lname" required><br>
-    <label for="email"><b>Address Line 1</b></label>
-    <input type="text" placeholder="Address Line 1" name="email" required>
+        /* Full height */
+        height: 100%;
 
-    <label for="psw"><b>Address Line 2</b></label>
-    <input type="text" placeholder="Address Line 2" name="psw" required>
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/address" method="POST">
+      <div class="bg">
+        <div class="container">
+          <h1>Address</h1>
+          <p>Tasty food is just a couple of clicks away</p>
+          <hr />
+          <label for="fname"><b>Unit Number</b></label
+          ><label id="ln" for="lname"><b>Building Name</b></label
+          ><br />
+          <input
+            type="text"
+            id="fname"
+            placeholder="Unit Number"
+            name="fname"
+            required
+          />
+          <input
+            type="text"
+            id="lname"
+            placeholder="Building Name"
+            name="lname"
+            required
+          /><br />
+          <label for="email"><b>Address Line 1</b></label>
+          <input
+            type="text"
+            placeholder="Address Line 1"
+            name="email"
+            required
+          />
 
-    <label for="psw-repeat"><b>City</b></label>
-    <input type="text" placeholder="City" name="psw-repeat" required>
-    <label for="pincode"><b>Pincode</b></label><br>
-    <input type="text" id="fname" placeholder="Pincode" name="pincode" required>
-    <hr>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <input type="submit" class="registerbtn" value="Register">
-  </div>
-</form>
+          <label for="psw"><b>Address Line 2</b></label>
+          <input type="text" placeholder="Address Line 2" name="psw" required />
 
-</body>
+          <label for="psw-repeat"><b>City</b></label>
+          <input type="text" placeholder="City" name="psw-repeat" required />
+          <label for="pincode"><b>Pincode</b></label
+          ><br />
+          <input
+            type="text"
+            id="fname"
+            placeholder="Pincode"
+            name="pincode"
+            required
+          />
+          <hr />
+          <p>
+            By creating an account you agree to our
+            <a href="#">Terms & Privacy</a>.
+          </p>
+          <input type="submit" class="registerbtn" value="Register" />
+        </div>
+      </div>
+    </form>
+  </body>
 </html>
