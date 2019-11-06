@@ -99,16 +99,12 @@
           Address Line 1: {{ addr1 }}<br />
           Address Line 2: {{ addr2 }}<br />
           City: {{ city }}<br />
-          Pincode: {{ pincode }}
+          Pincode: {{ pincode }}<br>
         </p>
         <br />
       </div>
-      <div class="buttone">
-        <a href="/profile/edit/{{ email }}">Edit Profile</a><br />
-      </div>
-      <div class="buttonp">
-        <a href="/profile/orders/{{ email }}">View Previous Orders</a>
-      </div>
+      <a href="/profile/edit/{{email}}">Edit Profile</a>
+      <a href="/profile/orders/{{email}}">Edit Profile</a>
     </div>
   </body>
 </html>

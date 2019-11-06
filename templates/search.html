@@ -131,11 +131,16 @@
 
         color: black;
         display: block;
+        text-decoration: none;
         /*visibility: hidden;*/
       }
 
       #myUL li a:hover:not(.header) {
         background-color: #eee;
+      }
+      a{
+        text-decoration: none;
+        color: black;
       }
     </style>
   </head>
@@ -181,8 +186,9 @@
     <!--Make this Dynamic-->
     <div class="row">
       <ul id="myUL">
-        <li>
-          <a href="#">Dollops</a>
+        <li onclick="location.replace('http://localhost:5000/order/dollops')">
+            <a href="#">Dollops</a>
+          
           <div class="column">
             <div class="card">
               <h3>Dollops</h3>
@@ -194,8 +200,8 @@
           </div>
         </li>
 
-        <li>
-          <a href="#">Saiba</a>
+        <li onclick="location.replace('http://localhost:5000/order/saiba')">
+            <a href="#">Saiba</a>
           <div class="column">
             <div class="card">
               <h3>Saiba</h3>
@@ -207,7 +213,7 @@
           </div>
         </li>
 
-        <li>
+      <li onclick="location.replace('http://localhost:5000/order/EggFactory')">
           <a href="#">Egg Factory</a>
           <div class="column">
             <div class="card">
@@ -219,8 +225,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <a href="#">Deetee</a>
+        <li onclick="location.replace('http://localhost:5000/order/Deetee')">
+            <a href="#">Deetee</a>
           <div class="column">
             <div class="card">
               <h3>Deetee</h3>
@@ -232,9 +238,8 @@
           </div>
         </li>
 
-        <li>
-          <a href="#">Ginger Garlic</a>
-
+        <li onclick="location.replace('http://localhost:5000/order/GingerGarlic')">
+            <a href="#">Ginger Garlic</a>
           <div class="column">
             <div class="card">
               <h3>Ginger Garlic</h3>
@@ -245,9 +250,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <a href="#">Country Inn</a>
-
+        <li onclick="location.replace('http://localhost:5000/order/CountryInn')">
+            <a href="#">Country Inn</a>
           <div class="column">
             <div class="card">
               <h3>Country Inn</h3>
@@ -258,9 +262,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <a href="#">Timmys</a>
-
+        <li onclick="location.replace('http://localhost:5000/order/timmys')">
+            <a href="#">Timmys</a>
           <div class="column">
             <div class="card">
               <h3>Timmys</h3>
@@ -271,8 +274,8 @@
             </div>
           </div>
         </li>
-        <li>
-          <a href="#">Subway</a>
+        <li onclick="location.replace('http://localhost:5000/order/subway')">
+            <a href="#">Subway</a>
           <div class="column">
             <div class="card">
               <h3>Subway</h3>
