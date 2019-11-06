@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, session,render_template,request
 from register import reg
 from profile import prof
+from search import ser
 from config import LOGGED_IN_USER_EMAIL
 from pymongo import MongoClient
 import json
@@ -11,6 +12,7 @@ client = MongoClient("mongodb://localhost:27017")
 app = Flask(__name__)
 app.register_blueprint(reg)
 app.register_blueprint(prof)
+app.register_blueprint(ser)
 @app.errorhandler(405)
 def error405(code):
     print(code)
