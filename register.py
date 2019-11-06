@@ -32,6 +32,8 @@ def address():
     db.emailDB.delete_one({"email":email})
     db = client.addressdb
     db.userAddress.insert_one({"email":email,"unum":unum,"bname":bname,"addr1":addr1,"addr2":addr2,"city":city,"pincode":pincode})
+    db = client.logindb
+    db.loggedin.insert_one({"user":email})
     return render_template("dashboard.html")
 
 
