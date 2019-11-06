@@ -1,23 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{name}}</title>
-</head>
-<body>
-    {%for item in data%}
-    {%if item not in '_id' and item not in 'menuid'%}
-        <p>{{data[item]}}</p>
-    {%endif%}
-    {%endfor%}
-
-    <<h3>Restaurant Menu</h3>
-</body>
-</html>
-=======
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,6 +10,13 @@
     <p>{{ data["name"] }}</p>
     <p>{{ data["address"] }}</p>
     <p>{{ data["desc"] }}</p>
+
+    <h3>Restaurant Menu</h3>
+    <form action="/order/confirm/{{data["name"]}}" method="GET">
+        {%for i in menu%}
+        <input type="checkbox" name="Item.{{i}}" value="{{ct}}">{{i}}<select name="Qty.{{i}}"><option>1</option><option>2</option></select><br>
+        {%endfor%}
+        <input type="submit" value="Place Order">
+    </form> 
   </body>
 </html>
->>>>>>> ce4f03bfe80ef5abb949ba76af59dd78f60ab8f6
