@@ -1,5 +1,6 @@
 // Wait for the DOM to be ready
 $(function() {
+  
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
   $("form[name='registration']").validate({
@@ -10,7 +11,6 @@ $(function() {
       // on the right side
       fname: {
           required
-          
       },
       lname: "required",
       email: {
@@ -23,6 +23,9 @@ $(function() {
         required: true,
         minlength: 5
       },
+      pincode: {
+        required: true,
+        minlength: 6, maxlength: 6      },
       
     },
     // Specify validation error messages
