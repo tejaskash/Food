@@ -2,6 +2,10 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="js/form-validation.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
     <style>
       body,
       html {
@@ -103,14 +107,14 @@
   </head>
   <body>
     <div class="bg">
-      <form action="/onboarding" method="POST">
+      <form action="/onboarding" method="POST" name="registration">
         <br />
         <br />
         <div class="container">
           <h1>Sign Up</h1>
           <p>Tasty food is just a couple of clicks away</p>
           <hr />
-          <label for="fname"><b>First Name</b></label
+          <label for="fname"  data-validation="alphanumeric"><b>First Name</b></label
           ><label id="ln" for="lname"><b>Last Name</b></label
           ><br />
           <input
@@ -119,6 +123,8 @@
             placeholder="Enter First Name"
             name="fname"
             required
+            data-validation="custom" data-validation-regexp="^([a-zA-Z]+)$"
+          
           />
           <input
             type="text"
@@ -126,9 +132,12 @@
             placeholder="Enter Last Name"
             name="lname"
             required
+            data-validation="custom" data-validation-regexp="^([a-zA-Z]+)$"
+          
+            
           /><br />
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required />
+          <input type="text" placeholder="Enter Email" name="email" data-validation="email"/>
 
           <label for="psw"><b>Password</b></label>
           <input
@@ -136,6 +145,8 @@
             placeholder="Enter Password"
             name="psw"
             required
+            minlength="5"
+            
           />
 
           <label for="psw-repeat"><b>Repeat Password</b></label>
@@ -144,6 +155,8 @@
             placeholder="Repeat Password"
             name="psw-repeat"
             required
+            minlength="5"
+            
           />
           <hr />
           <p>
@@ -153,6 +166,14 @@
           <input type="submit" class="registerbtn" value="Register" />
         </div>
       </form>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+      <script>
+        $.validate({
+        });
+      </script>
     </div>
+
+    
   </body>
 </html>

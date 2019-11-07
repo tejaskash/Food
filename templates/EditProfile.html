@@ -69,13 +69,25 @@
         ADDRESS LINE 2:<input type="text" name="addr2" value="{{ addr2 }}" />
         <br />
         CITY:<input type="text" name="city" value="{{ city }}" /> <br />
-        PINCODE:<input type="text" name="pincode" value="{{ pincode }}" /><br />
+        PINCODE:<input type="text" name="pincode" 
+        required
+            data-validation="number"
+            data-validation="length" data-validation-length="6-6"
+
+        value="{{ pincode }}" /><br />
         PASSWORD:
-        <input type="password" name="password" value="{{ password }}" /><br />
+        <input type="password" name="password" required value="{{ password }}" /><br />
         <div class="button">
           <input type="submit" />
         </div>
       </form>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+  $.validate({
+  });
+</script>
+
     </div>
     <div
       style="float: right; color: white; margin-right: 50px; font-size: 50px;font-family: 'B612', sans-serif;"

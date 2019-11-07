@@ -114,7 +114,7 @@
           <h1 style="text-align: center;">Login</h1>
           <hr />
           <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required />
+          <input type="text" placeholder="Enter Email" name="email" required data-validation="email"/>
 
           <label for="psw"><b>Password</b></label>
           <input
@@ -129,6 +129,13 @@
         <form action="/register" method="GET">
           <input type="submit" class="registerbtn" value="Register" />
         </form>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+  $.validate({
+  });
+</script>
+
       </div>
     </div>
   </body>

@@ -61,12 +61,19 @@
       <input type="hidden" value="{{ email }}" name="email" />
       <input type="hidden" value="{{ order }}" name="ord" />
       <input type="hidden" value="{{ name }}" name="name" />
-      Card Number: <input type="text" name="ccnum" /><br />
-      Name On Card: <input type="text" name="ccname" /><br />
-      CVV: <input type="password" name="cccvv" /><br />
-      Expiry: <input type="month" name="exp" /><br />
+      Card Number: <input type="text" name="ccnum" required data-validation="number" data-validation="length" data-validation-length="16-16"/><br />
+      Name On Card: <input type="text" name="ccname" required data-validation="custom" data-validation-regexp="^([a-zA-Z]+)$"
+      /><br />
+      CVV: <input type="password" name="cccvv" required data-validation="number" data-validation="length" data-validation-length="3-3"/><br />
+      Expiry: <input type="month" name="exp" required/><br />
       <br/><br/>
       <input type="submit" value="Make Payment" />
     </form>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script>
+      $.validate({
+      });
+    </script>
   </body>
 </html>
