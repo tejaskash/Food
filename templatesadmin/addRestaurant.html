@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+    <title>Add Restaurant</title>
+</head>
+<body>
+    <form action="/admin/update" method="POST">
+        <input type="hidden" name="email" value="{{email}}">
+        Restaurant Name: <input type="text" name="name"><br>
+        Description: <input type="text" name="desc"><br>
+        Address: <input type="text" name="address"><br>
+        Item 1: <input type="text" name="item1">Cost:<input type="text" name="cost1"><br>
+        Item 2: <input type="text" name="item2">Cost:<input type="text" name="cost2"><br>
+        Item 3: <input type="text" name="item3">Cost:<input type="text" name="cost3"><br>
+        Item 4: <input type="text" name="item4">Cost:<input type="text" name="cost4"><br>
+        Item 5: <input type="text" name="item5">Cost:<input type="text" name="cost5"><br>
+        <input type="submit" value="Add Restaurant">
+    </form>
+</body>
+</html>
