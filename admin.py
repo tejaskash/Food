@@ -13,15 +13,17 @@ def adminAuth():
     print(user)
     password = request.form['psw']
     print(password)
-    db = client.logindb
+    db = client.adminlogindb
     res = db.loginAuth.find_one({"user":user,"passw":password})
     print(res)
     if(res == None):
         return "<h1>Invalid Username/Password</h1>"
     if res["passw"] == password:
-        db=client.logindb
+        db=client.adminlogindb
         db.loggedin.insert_one({"user":user})
-        return render_template("adminDashboard.html",email=user)
+        db=client.restdb
+        res=db.rest.find({"email":user})
+        return render_template("adminDashboard.html",email=user,data=res)
     else:
         return "<h1>Invalid Password</h1>"
     return "<h1>Hello</h1>"
@@ -60,3 +62,6 @@ def registerAdmin():
     db = client.emails
     db.emailDB.insert_one({"email":email})
     return render_template("adminDashboard.html",email=email)
+@adm.route("/admin/register/page",methods=["POST"])
+def a():
+    return render_template("adminRegister.html")
