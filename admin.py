@@ -48,7 +48,7 @@ def adminUpdate():
     db.rest.insert_one({"email":email,"name":name,"address":address,"desc":desc,"menuid":name})
     db = client.menudb
     db.menus.insert_one({"menuid":name,"Items":itemCost})
-    return "<h1>Success</h1>"
+    return render_template("adminsuccess.html",email=email)
 @adm.route("/admin/register",methods=["POST"])
 def registerAdmin():
     fname = str(request.form['fname'])
@@ -71,3 +71,7 @@ def logout():
     email=res["user"]
     db.loggedin.delete_one({"email":email})
     return render_template("welcome.html")
+@adm.route("/admin/home",methods=["GET","POST"])
+def c():
+    email=request.args.get("email")
+    return render_template("adminDashboard.html",email=email)

@@ -23,7 +23,10 @@
       }
     </style>
   </head>
-  <body>
-    <div class="bg"></div>
+  <body class="bg"> 
+    <form action="/admin/home",method="POST">
+      <input type="hidden" value="{{email}}" name="email">
+      <input type="submit" value="Back To Home">
+    </form>
   </body>
 </html>
