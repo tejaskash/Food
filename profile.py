@@ -43,9 +43,18 @@ def updateProfile(email):
     return "<h1>Success</h1>"
 @prof.route("/profile/orders/<email>",methods=['GET','POST'])
 def previousOrders(email):
-    db = client.ordersdb
+    db = client.orderdb
+    print(email)
     res = db.orders.find({"email":email})
-    s=""
+    print("--RESULT--")
+    if(res == None):
+        return "<h1>No Previous Orders</h1>"
+    result = list()
     for r in res:
-        s = s+str(r)
-    return "<h4>"+s+"</h4>"
+        a = list()
+        a.append(r["rest"])
+        a.append(r["OrderItems"])
+        a.append(r["timestamp"])
+        result.append(a)
+    print("--END--")
+    return render_template("previous.html",data=result)

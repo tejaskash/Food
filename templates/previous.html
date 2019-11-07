@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Previous Orders</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Restaurant</th>
+            <th>Order Items</th>
+        </tr>
+        {%for d in data%}
+        <tr>
+            <td>{{d[2]}}</td>
+            <td>{{d[0]}}</td>
+            <td>
+                {%for item in d[1]%}
+                {{item}} : {{d[1][item]}}
+                {%endfor%}
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
