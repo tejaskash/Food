@@ -1,23 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome" />
     <title>Add Restaurant</title>
-</head>
-<body>
-    <form action="/admin/update" method="POST">
-        <input type="hidden" name="email" value="{{email}}">
-        Restaurant Name: <input type="text" name="name"><br>
-        Description: <input type="text" name="desc"><br>
-        Address: <input type="text" name="address"><br>
-        Item 1: <input type="text" name="item1">Cost:<input type="text" name="cost1"><br>
-        Item 2: <input type="text" name="item2">Cost:<input type="text" name="cost2"><br>
-        Item 3: <input type="text" name="item3">Cost:<input type="text" name="cost3"><br>
-        Item 4: <input type="text" name="item4">Cost:<input type="text" name="cost4"><br>
-        Item 5: <input type="text" name="item5">Cost:<input type="text" name="cost5"><br>
-        <input type="submit" value="Add Restaurant">
-    </form>
-</body>
+    <style>
+      body {
+        background-image: url("../static/images/add.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+      }
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: brown;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: brown;
+      }
+
+      div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 50%;
+        margin-left: 10px;
+      }
+      #i1 #i2 #i3 {
+        width: 25%;
+        float: left;
+      }
+      #c1 #c2 #c3 {
+        width: 25%;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="/admin/update" method="POST">
+        <input type="hidden" name="email" value="{{ email }}" />
+        Restaurant Name: <input type="text" name="name" /><br />
+        Description: <input type="text" name="desc" /><br />
+        Address: <input type="text" name="address" /><br />
+        Item 1: <input type="text" name="item1" id="i1" /> Cost:<input
+          type="text"
+          name="cost1"
+          id="c1"
+        /><br />
+        Item 2: <input type="text" name="item2" id="i2" />Cost:<input
+          type="text"
+          name="cost2"
+          id="c2"
+        /><br />
+        Item 3: <input type="text" name="item3" id="i3" />Cost:<input
+          type="text"
+          name="cost3"
+          id="c3"
+        /><br />
+        Item 4: <input type="text" name="item4" />Cost:<input
+          type="text"
+          name="cost4"
+        /><br />
+        Item 5: <input type="text" name="item5" />Cost:<input
+          type="text"
+          name="cost5"
+        /><br />
+        <input type="submit" value="Add Restaurant" />
+      </form>
+    </div>
+  </body>
 </html>
