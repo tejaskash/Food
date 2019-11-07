@@ -13,11 +13,13 @@ def adminAuth():
     print(user)
     password = request.form['psw']
     print(password)
-    db = client.admlogindb
+    db = client.logindb
     res = db.loginAuth.find_one({"user":user,"passw":password})
     print(res)
+    if(res == None):
+        return "<h1>Invalid Username/Password</h1>"
     if res["passw"] == password:
-        db=client.admlogindb
+        db=client.logindb
         db.loggedin.insert_one({"user":user})
         return render_template("adminDashboard.html",email=user)
     else:

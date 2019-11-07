@@ -11,6 +11,7 @@ def makePayment():
     ccname= request.form["ccname"]
     cccvv = request.form["cccvv"]
     exp = request.form["exp"]
+    totCost = request.form["totCost"]
     db = client.paymentdb
-    db.payments.insert_one({"email":email,"ccnum":ccnum,"ccname":ccname,"cccvv":cccvv,"exp":exp})
+    db.payments.insert_one({"email":email,"ccnum":ccnum,"ccname":ccname,"cccvv":cccvv,"exp":exp,"amount":totCost})
     return render_template("orderconf.html",email=email,order=eval(order),name=request.form["name"])

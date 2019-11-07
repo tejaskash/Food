@@ -52,13 +52,12 @@
         <div style="min-width:400px">
 
                 <div class="w3-bar w3-large w3-theme-d4">
-                  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-bars"></i></a>
-                  <span class="w3-bar-item">PAYMENT</span>
-                  <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+                  <span class="w3-bar-item">PAYMENT&nbsp;&nbsp; Amount: {{totCost}}</span>
                 </div>
 <br/>                
 
     <form action="/pay" method="POST">
+      <input type="hidden" value="{{totCost}}" name="totCost">
       <input type="hidden" value="{{ email }}" name="email" />
       <input type="hidden" value="{{ order }}" name="ord" />
       <input type="hidden" value="{{ name }}" name="name" />

@@ -17,14 +17,20 @@ def displayPage(name):
 @order.route("/order/confirm/<name>")
 def placeOrder(name):
     req = dict(request.args)
+    menu=eval(request.args.get("menu"))
     keys = req.keys()
     order = dict()
     for k in keys:
         if k.split(".")[0] == "Item":
             order[k.split(".")[1]]=req["Qty."+k.split(".")[1]]
     print(order)
+    totCost=0
+    for k in order:
+        qty = int(order[k])
+        cost=int(menu[k])
+        totCost =totCost+ qty*cost
     db = client.logindb
     email = db.loggedin.find_one()["user"]
     db = client.orderdb
     db.orders.insert_one({"email":email,"rest":name,"OrderItems":order,"timestamp":datetime.now()})
-    return render_template("payment.html",order=order,email=email,name=name)
+    return render_template("payment.html",order=order,email=email,name=name,totCost=totCost)

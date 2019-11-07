@@ -265,9 +265,10 @@ input[type="submit"] {
     <h3 style="font-size: 40px;">Restaurant Menu</h3>
     <p></p>
     <form action="/order/confirm/{{data["name"]}}" method="GET">
+      <input type="hidden" value="{{menu}}" name="menu">
         {%for i in menu%}
         <label class="container">
-        <input type="checkbox" name="Item.{{i}}" value="{{ct}}">{{i}}<select name="Qty.{{i}}"><option>1</option><option>2</option></select><br>
+        <input type="checkbox" name="Item.{{i}}" value="{{ct}}">{{i}}&nbsp;Cost:{{menu[i]}}<select name="Qty.{{i}}"><option>1</option><option>2</option></select><br>
         <span class="checkmark"></span>
       </label>
         {%endfor%}
