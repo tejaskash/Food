@@ -59,8 +59,7 @@ def registerAdmin():
     db.userDetails.insert_one({"fname":fname,"lname":lname,"email":email})
     db = client.adminlogindb
     db.loginAuth.insert_one({"user":email,"passw":passw})
-    db = client.emails
-    db.emailDB.insert_one({"email":email})
+    db.loggedin.insert_one({"email":email})
     return render_template("adminDashboard.html",email=email)
 @adm.route("/admin/register/page",methods=["POST"])
 def a():
@@ -69,5 +68,6 @@ def a():
 def logout():
     db  = client.adminlogindb
     res=db.loggedin.find_one()
-    db.loggedin.delete_one(res)
+    email=res["user"]
+    db.loggedin.delete_one({"email":email})
     return render_template("welcome.html")

@@ -43,11 +43,12 @@
         <td>{{ d[0] }}</td>
         <td>
           {%for item in d[1]%}
-          {{ item }} : {{ d[1][item] }}
+          {{ item }} : {{ d[1][item] }}<br>
           {%endfor%}
         </td>
       </tr>
       {%endfor%}
     </table>
+    <a href="/home">Back To Home</a>
   </body>
 </html>

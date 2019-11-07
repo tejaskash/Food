@@ -42,7 +42,7 @@ def updateProfile(email):
     db.userAddress.update_one({"email":email},{"$set":{"pincode":request.form['pincode']}})
     db=client.addressdb
     db.loginAuth.update_one({"user":email},{"$set":{"passw":request.form['password']}})
-    return "<h1>Success</h1>"
+    return render_template("success.html")
 @prof.route("/profile/orders/<email>",methods=['GET','POST'])
 def previousOrders(email):
     db = client.orderdb
@@ -60,3 +60,6 @@ def previousOrders(email):
         result.append(a)
     print("--END--")
     return render_template("previous.html",data=result)
+@prof.route("/home")
+def b():
+    return render_template("dashboard.html")
