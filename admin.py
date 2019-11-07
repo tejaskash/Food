@@ -47,3 +47,16 @@ def adminUpdate():
     db = client.menudb
     db.menus.insert_one({"menuid":name,"Items":itemCost})
     return "<h1>Success</h1>"
+@adm.route("/admin/register",methods=["POST"])
+def registerAdmin():
+    fname = str(request.form['fname'])
+    lname = str(request.form['lname'])
+    email = str(request.form['email'])
+    passw = str(request.form['psw'])
+    db = client.admdb
+    db.userDetails.insert_one({"fname":fname,"lname":lname,"email":email})
+    db = client.adminlogindb
+    db.loginAuth.insert_one({"user":email,"passw":passw})
+    db = client.emails
+    db.emailDB.insert_one({"email":email})
+    return render_template("adminDashboard.html",email=email)
