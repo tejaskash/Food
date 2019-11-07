@@ -23,9 +23,7 @@ $(function() {
         required: true,
         minlength: 5
       },
-      pincode: {
-        required: true,
-        minlength: 6, maxlength: 6      },
+      
       
     },
     // Specify validation error messages

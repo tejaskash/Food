@@ -138,16 +138,20 @@
           <input type="text" placeholder="Address Line 2" name="psw" required />
 
           <label for="psw-repeat"><b>City</b></label>
-          <input type="text" placeholder="City" name="psw-repeat" required />
+          <input type="text" placeholder="City" name="psw-repeat" required
+          data-validation="custom" data-validation-regexp="^([a-zA-Z]+)$"
+          />
           <label for="pincode"><b>Pincode</b></label
           ><br />
           <input
-            type="number"
+            type="text"
             id="pincode"
             placeholder="Pincode"
             name="pincode"
             required
             width="100%"
+            data-validation="number"
+            data-validation="length" data-validation-length="6-6"
 
           />
           <hr />
@@ -159,5 +163,18 @@
         </div>
       </div>
     </form>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+  $.validate({
+  });
+</script>
+
+
+
+
   </body>
 </html>
