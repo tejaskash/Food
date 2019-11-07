@@ -4,19 +4,276 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>{{ name }}</title>
+    <style>
+        body,
+        html {
+          height: 100%;
+          margin: 0;
+          font-family: 'Roboto Condensed', sans-serif;
+        }
+    
+        .bg {
+          /* The image used */
+          background-image: url("../static/images/menu.jpg");
+    
+          /* Full height */
+          height: 100%;
+    
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+    
+        p {
+          color: white;
+        }
+        .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color:brown;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.menu{
+  color: #eee;
+}
+h1{
+  color: white ;
+}
+input[type="submit"] {
+        width: 20%;
+        background-color: brown;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .hr{
+        width: 20%;
+      }
+      select{
+        margin: 10px;
+      }
+      </style>
   </head>
   <body>
-    <p>{{ data["name"] }}</p>
-    <p>{{ data["address"] }}</p>
-    <p>{{ data["desc"] }}</p>
-
-    <h3>Restaurant Menu</h3>
+      <div class="w3-top" style="font-family: Arial, Helvetica, sans-serif;">
+          <div class="w3-bar w3-black w3-card">
+            <a
+              class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+              href="javascript:void(0)"
+              onclick="myFunction()"
+              title="Toggle Navigation Menu"
+              ><i class="fa fa-bars"></i
+            ></a>
+            <a href="/loginPage" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <a
+              href="/search"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+              >SEARCH</a
+            >
+            <a
+              href="/profile"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+              >PROFILE</a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            
+            <a
+              href="/logout"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+              href="#"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              ></a
+            >
+            <a
+            href="#"
+            class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+            ></a
+          >
+          <a
+            href="#"
+            class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+            ></a
+          >
+            <a
+              href="/logout"
+              class="w3-bar-item w3-button w3-padding-large w3-hide-small logout"
+              >LOG-OUT</a
+            >
+            </div>
+          </div>
+        </div>
+    <div class="bg">
+    <div class="data">
+      <br/>
+    <h1 style="font-size: 60px;">{{ data["name"] }}</h1>
+    <h3 style="color: white;margin-top: 5px;">{{ data["address"] }}</h2>
+    <h3 style="color: white; margin-top: 5px;">{{ data["desc"] }}</h2>
+  </div>
+  <br>
+  <br>
+  <div class="menu">
+    <h3 style="font-size: 40px;">Restaurant Menu</h3>
+    <p></p>
     <form action="/order/confirm/{{data["name"]}}" method="GET">
         {%for i in menu%}
+        <label class="container">
         <input type="checkbox" name="Item.{{i}}" value="{{ct}}">{{i}}<select name="Qty.{{i}}"><option>1</option><option>2</option></select><br>
+        <span class="checkmark"></span>
+      </label>
         {%endfor%}
         <input type="submit" value="Place Order">
     </form> 
+  </div>
+    </div>
   </body>
 </html>

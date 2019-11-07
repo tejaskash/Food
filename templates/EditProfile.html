@@ -4,18 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=chrome" />
+    <link
+      href="https://fonts.googleapis.com/css?family=B612:700&display=swap"
+      rel="stylesheet"
+    />
     <title>Edit Profile</title>
     <style>
-      html {
-        background: url("../static/images/edit_profile.png") no-repeat center
-          center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+      input[type="text"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
       }
       .bg {
-        float: right;
+        background-image: url("./edit_profile.png");
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 50%;
+        float: left;
+        margin-top: 50px;
+        margin-left: 20px;
       }
       .button {
         text-decoration: underline;
@@ -28,25 +42,45 @@
         overflow: hidden;
         z-index: 1;
       }
-      input {
+      input[type="submit"] {
+        width: 100%;
+        background-color: brown;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
       }
     </style>
   </head>
-  <body>
+  <body bgcolor="black">
     <div class="bg">
       <form method="POST" action="/update/{{ email }}">
         <br />
-        <input type="text" name="unum" value="{{ unum }}" /><br />
-        <input type="text" name="bname" value="{{ bname }}" /> <br />
-        <input type="text" name="addr1" value="{{ addr1 }}" /> <br />
-        <input type="text" name="addr2" value="{{ addr2 }}" /> <br />
-        <input type="text" name="city" value="{{ city }}" /> <br />
-        <input type="text" name="pincode" value="{{ pincode }}" /><br />
+        UNIT NO:<input type="text" name="unum" value="{{ unum }}" /><br />
+        BUILDING NAME: <input type="text" name="bname" value="{{ bname }}" />
+        <br />
+        ADDRESS LINE 1:<input type="text" name="addr1" value="{{ addr1 }}" />
+        <br />
+        ADDRESS LINE 2:<input type="text" name="addr2" value="{{ addr2 }}" />
+        <br />
+        CITY:<input type="text" name="city" value="{{ city }}" /> <br />
+        PINCODE:<input type="text" name="pincode" value="{{ pincode }}" /><br />
+        PASSWORD:
         <input type="password" name="password" value="{{ password }}" /><br />
         <div class="button">
           <input type="submit" />
         </div>
       </form>
+    </div>
+    <div
+      style="float: right; color: white; margin-right: 50px; font-size: 50px;font-family: 'B612', sans-serif;"
+    >
+      <h1>Edit Profile</h1>
     </div>
   </body>
 </html>

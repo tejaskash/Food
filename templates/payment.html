@@ -1,21 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome" />
     <title>Payment</title>
-</head>
-<body>
+    <style>
+      body{
+        background-color: gray;
+      }
+      input[type="text"],
+      input[type="month"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        background-color: brown;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color:brown;
+      }
+
+      div {
+        border-radius: 5px;
+        padding: 20px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+        <div style="min-width:400px">
+
+                <div class="w3-bar w3-large w3-theme-d4">
+                  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-bars"></i></a>
+                  <span class="w3-bar-item">PAYMENT</span>
+                  <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
+                </div>
+<br/>                
+
     <form action="/pay" method="POST">
-        <input type="hidden" value="{{email}}" name="email">
-        <input type="hidden" value="{{order}}" name="ord">
-        <input type="hidden" value="{{name}}" name="name">
-        Card Number: <input type="text" name="ccnum"><br>
-        Name On Card: <input type="text" name="ccname"><br>
-        CVV: <input type="password" name="cccvv"><br>
-        Expiry: <input type="month" name="exp"><br>
-        <input type="submit" value="Make Payment">
+      <input type="hidden" value="{{ email }}" name="email" />
+      <input type="hidden" value="{{ order }}" name="ord" />
+      <input type="hidden" value="{{ name }}" name="name" />
+      Card Number: <input type="text" name="ccnum" /><br />
+      Name On Card: <input type="text" name="ccname" /><br />
+      CVV: <input type="password" name="cccvv" /><br />
+      Expiry: <input type="month" name="exp" /><br />
+      <br/><br/>
+      <input type="submit" value="Make Payment" />
     </form>
-</body>
+  </body>
 </html>

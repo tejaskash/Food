@@ -5,6 +5,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         box-sizing: border-box;
@@ -112,7 +116,8 @@
         padding: 16px;
         margin: 10px;
         text-align: center;
-        background-color: burlywood;
+        background-color: brown;
+        color: white;
       }
       #myUL {
         list-style-type: none;
@@ -129,7 +134,7 @@
         text-decoration: none;
         font-size: 0px;
 
-        color: black;
+        color: white;
         display: block;
         text-decoration: none;
         /*visibility: hidden;*/
@@ -138,13 +143,13 @@
       #myUL li a:hover:not(.header) {
         background-color: #eee;
       }
-      a{
+      a {
         text-decoration: none;
         color: black;
       }
     </style>
   </head>
-  <body bgcolor="skyblue" onload="initialize()">
+  <body bgcolor="black" onload="initialize()">
     <script>
       function searchRest() {
         var input, filter, ul, li, a, i, txtValue;
@@ -163,7 +168,13 @@
         }
       }
     </script>
-    <center><h2>Restaurant Search</h2></center>
+    <center>
+      <h2
+        style="font-family: 'Shadows Into Light', cursive; color:white;font-size:50px"
+      >
+        Restaurant Search
+      </h2>
+    </center>
     <div class="search-container">
       <form action="">
         <center>
@@ -187,8 +198,8 @@
     <div class="row">
       <ul id="myUL">
         <li onclick="location.replace('http://localhost:5000/order/Dollops')">
-            <a href="#">Dollops</a>
-          
+          <a href="#">Dollops</a>
+
           <div class="column">
             <div class="card">
               <h3>Dollops</h3>
@@ -201,7 +212,7 @@
         </li>
 
         <li onclick="location.replace('http://localhost:5000/order/Saiba')">
-            <a href="#">Saiba</a>
+          <a href="#">Saiba</a>
           <div class="column">
             <div class="card">
               <h3>Saiba</h3>
@@ -213,7 +224,9 @@
           </div>
         </li>
 
-      <li onclick="location.replace('http://localhost:5000/order/EggFactory')">
+        <li
+          onclick="location.replace('http://localhost:5000/order/EggFactory')"
+        >
           <a href="#">Egg Factory</a>
           <div class="column">
             <div class="card">
@@ -226,7 +239,7 @@
           </div>
         </li>
         <li onclick="location.replace('http://localhost:5000/order/Deetee')">
-            <a href="#">Deetee</a>
+          <a href="#">Deetee</a>
           <div class="column">
             <div class="card">
               <h3>Deetee</h3>
@@ -238,8 +251,10 @@
           </div>
         </li>
 
-        <li onclick="location.replace('http://localhost:5000/order/GingerGarlic')">
-            <a href="#">Ginger Garlic</a>
+        <li
+          onclick="location.replace('http://localhost:5000/order/GingerGarlic')"
+        >
+          <a href="#">Ginger Garlic</a>
           <div class="column">
             <div class="card">
               <h3>Ginger Garlic</h3>
@@ -250,8 +265,10 @@
             </div>
           </div>
         </li>
-        <li onclick="location.replace('http://localhost:5000/order/CountryInn')">
-            <a href="#">Country Inn</a>
+        <li
+          onclick="location.replace('http://localhost:5000/order/CountryInn')"
+        >
+          <a href="#">Country Inn</a>
           <div class="column">
             <div class="card">
               <h3>Country Inn</h3>
@@ -263,7 +280,7 @@
           </div>
         </li>
         <li onclick="location.replace('http://localhost:5000/order/Timmys')">
-            <a href="#">Timmys</a>
+          <a href="#">Timmys</a>
           <div class="column">
             <div class="card">
               <h3>Timmys</h3>
@@ -275,7 +292,7 @@
           </div>
         </li>
         <li onclick="location.replace('http://localhost:5000/order/Subway')">
-            <a href="#">Subway</a>
+          <a href="#">Subway</a>
           <div class="column">
             <div class="card">
               <h3>Subway</h3>
