@@ -65,3 +65,9 @@ def registerAdmin():
 @adm.route("/admin/register/page",methods=["POST"])
 def a():
     return render_template("adminRegister.html")
+@adm.route("/admin/logout")
+def logout():
+    db  = client.adminlogindb
+    res=db.loggedin.find_one()
+    db.loggedin.delete_one(res)
+    return render_template("welcome.html")

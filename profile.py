@@ -7,8 +7,10 @@ def profilePage():
     db = client.logindb
     res = db.loggedin.find_one()
     email = res['user']
+    print(email)
     db = client.userdb
     res = db.userDetails.find_one({"email":email})
+    print(res)
     fname=res["fname"]
     lname=res["lname"]
     db=client.addressdb

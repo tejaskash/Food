@@ -44,7 +44,7 @@
           <div class="w3-col m6 w3-padding-large w3-hide-small">
            <img src="../static/images/admindash.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
           </div>
-      
+<center>
           <div class="w3-col m6 w3-padding-large">
             <h1 class="w3-center">My Restaurants</h1><br>
             {%for d in data%}
@@ -52,7 +52,10 @@
             {%endfor%}
             <p class="w3-large w3-text-grey w3-hide-medium"></p>
           </div>
-          <center>
+          
+          
+        </center>
+    <center>
           <form action="/admin/add" method="POST">
             <input type="hidden" name="email" value="{{ email }}" />
             <input type="submit" style="border: solid;" class="w3-bar-item w3-button" value="Add Restaurant" />

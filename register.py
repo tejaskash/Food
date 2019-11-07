@@ -16,9 +16,7 @@ def onboarding():
     db.userDetails.insert_one({"fname":fname,"lname":lname,"email":email})
     db = client.logindb
     db.loginAuth.insert_one({"user":email,"passw":passw})
-    db = client.emails
-    db.emailDB.insert_one({"email":email})
-    return render_template("address.html")
+    return render_template("address.html",email=email)
 @reg.route("/address",methods=["GET","POST"])
 def address():
     unum = str(request.form['fname'])
@@ -27,14 +25,10 @@ def address():
     addr2 = str(request.form['psw'])
     city = str(request.form['psw-repeat'])
     pincode = str(request.form['pincode'])
-    db = client.emails
-    email = db.emailDB.find_one()["email"]
-    db.emailDB.delete_one({"email":email})
+    email = request.form["email1"]
     db = client.addressdb
     db.userAddress.insert_one({"email":email,"unum":unum,"bname":bname,"addr1":addr1,"addr2":addr2,"city":city,"pincode":pincode})
-    db = client.logindb
-    db.loggedin.insert_one({"user":email})
-    return render_template("dashboard.html")
+    return render_template("welcome.html")
 
 
 

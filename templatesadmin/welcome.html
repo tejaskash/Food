@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .bg {
+        /* The image used */
+        background-image: url("../static/images/res_page.png");
+        margin: 0;
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+      }
+      .scroll {
+        /* The image used */
+        background-image: url("2.png");
+        margin: 0;
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 1;
+      }
+      ul {
+        list-style-type: none;
+        overflow: hidden;
+        font-size: 18px;
+        z-index: 1;
+      }
+
+      li {
+        float: bottom;
+        float: left;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+      .buttonr {
+        text-decoration: underline;
+        float: left;
+        font-size: 30px;
+        margin-top: 630px;
+        margin-left: 200px;
+        margin-bottom: 20px;
+      }
+      .buttonl {
+        text-decoration: underline;
+        float: left;
+        font-size: 30px;
+        margin-top: 630px;
+        margin-right: 10px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+      }
+      
+    </style>
+    <div class="bg">
+      <div class="buttonr">
+        <a
+          style="text-decoration:none;color:white;overflow:hidden;z-index: 1"
+          href="/loginPage"
+          ><b>Login</b></a
+        >
+      </div>
+      <div class="buttonl">
+        <a
+          style="text-decoration:none;color:white;overflow:hidden;z-index: 1"
+          href="/register"
+          ><b>Register</b></a
+        >
+        <b><a style="text-decoration:none;color:white" href="/admin/login">Admin Login</a></b>
+    </div>
+  </body>
+</html>
