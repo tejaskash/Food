@@ -74,4 +74,7 @@ def logout():
 @adm.route("/admin/home",methods=["GET","POST"])
 def c():
     email=request.args.get("email")
-    return render_template("adminDashboard.html",email=email)
+    db=client.restdb
+    res=db.rest.find({"email":email})
+    print(res)
+    return render_template("adminDashboard.html",email=email,data=res)

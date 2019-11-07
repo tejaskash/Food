@@ -37,7 +37,8 @@ def loginAuth():
     print(password)
     db = client.logindb
     res=db.loginAuth.find_one({"user":user,"passw":password})
-    print(res)
+    if(res == None):
+        return render_template("invalid.html")
     if res["passw"] == password:
         db=client.logindb
         db.loggedin.insert_one({"user":user})
@@ -53,7 +54,7 @@ def logout():
         db.loggedin.delete_one(res)
         return render_template("welcome.html")
     else:
-        return "<h1>Not Logged In</h1>"
+        return render_template("invalid.html")
 
 if __name__ == "__main__":
     app.run("localhost",port=5000,threaded=True,debug=True)
